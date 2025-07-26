@@ -1,4 +1,4 @@
-import psycopg2
+import psycopg
 from flask import Flask
 app = Flask(__name__)
 
@@ -8,13 +8,13 @@ def hello_world():
 
 @app.route('/db_test')
 def db_test():
-    conn = psycopg2.connect("postgresql://lab_10_qg0a_user:RLFv1qvFiD42BaJ4enaGrPxVYio9Ndna@dpg-d22cn8fgi27c73eqh7sg-a/lab_10_qg0a")
+    conn = psycopg.connect("postgresql://lab_10_qg0a_user:RLFv1qvFiD42BaJ4enaGrPxVYio9Ndna@dpg-d22cn8fgi27c73eqh7sg-a/lab_10_qg0a")
     conn.close()
     return 'db test working'
 
 @app.route('/db_create')
 def db_create():
-    conn = psycopg2.connect("postgresql://lab_10_qg0a_user:RLFv1qvFiD42BaJ4enaGrPxVYio9Ndna@dpg-d22cn8fgi27c73eqh7sg-a/lab_10_qg0a")
+    conn = psycopg.connect("postgresql://lab_10_qg0a_user:RLFv1qvFiD42BaJ4enaGrPxVYio9Ndna@dpg-d22cn8fgi27c73eqh7sg-a/lab_10_qg0a")
     cur = conn.cursor()
     cur.execute('''
     CREATE TABLE IF NOT EXISTS Basketball(
