@@ -1,4 +1,4 @@
 Flask
-gunicorn
+Gunicorn
 psycopg==3.1.18
 
